@@ -5,7 +5,7 @@ resource "aws_subnet" "subnet1-public" {
 
   tags = {
     Name = "${var.vpc_name}-public_subnet1"
-    Owner = "AWSDEVOPS"
+    Owner = "AWSDEVOPS01"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "subnet2-public" {
 
   tags = {
     Name = "${var.vpc_name}-public_subnet2"
-    Owner = "AWSDEVOPS"
+    Owner = "AWSDEVOPS01"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "subnet3-public" {
 
   tags = {
     Name = "${var.vpc_name}-public_subnet3"
-    Owner = "AWSDEVOPS"
+    Owner = "AWSDEVOPS01"
   }
 
 }
