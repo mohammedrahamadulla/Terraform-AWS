@@ -1,5 +1,5 @@
 cidr_block = "10.1.0.0/16"
-env = "Development"
+env        = "Development"
 #vpc_name = "VIKRAM"
 public_subnet1_cidr = "10.1.1.0/24"
 public_subnet2_cidr = "10.1.2.0/24"
