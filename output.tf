@@ -8,18 +8,18 @@ output "vpc_arn" {
   sensitive = false
 }
 
-output "subnet_1" {
+output "subnet1_id" {
   value     = aws_subnet.subnet1-public.id
   sensitive = false
 }
 
-output "subnet_2" {
+output "subnet2_id" {
   value     = aws_subnet.subnet2-public.id
   sensitive = false
 }
 
-output "subnet_3" {
-  value     = aws_subnet.subnet2-public.id
+output "subnet3_id" {
+  value     = aws_subnet.subnet3-public.id
   sensitive = false
 } 
 
