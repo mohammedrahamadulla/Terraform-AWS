@@ -6,6 +6,9 @@ resource "aws_vpc" "testvpc01" {
     Owner       = "Mohammed Rahamadulla"
     environment = var.env
   }
+  depends_on = [
+    aws_s3_bucket.vpcflowlogsbucket
+  ]
 }
 
 resource "aws_internet_gateway" "testvpc01" {
