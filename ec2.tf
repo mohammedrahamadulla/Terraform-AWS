@@ -7,17 +7,15 @@ resource "aws_instance" "web-1" {
   vpc_security_group_ids      = ["${aws_security_group.allow_all.id}"]
   associate_public_ip_address = true
   tags = {
-    Name       = "Test-Server-1"
-    Env        = "Prod"
+    Name       = "${local.vpc_name_lower}-Server-1"
+    Env        = var.env
     Owner      = "mohammedrahamadulla"
     CostCenter = "ABCD"
   }
-  lifecycle {
-    create_before_destroy = true
-    #prevent_destroy       = true
-
-    ignore_changes = [
-      tags,
-    ]
-  }
+  user_data = <<-EOF
+		#!/bin/bash
+        sudo apt-get update
+		sudo apt-get install -y nginx unzip jq
+		echo "<h1>Deployed via Terraform on ${local.vpc_name_lower}-Server-1" | sudo tee /var/www/html/index.nginx-debian.html
+	EOF
 }

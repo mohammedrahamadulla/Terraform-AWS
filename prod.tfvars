@@ -1,0 +1,7 @@
+vpc_name            = "VIKRAM"
+cidr_block          = "192.168.0.0/16"
+env                 = "PROD"
+public_subnet1_cidr = "192.168.1.0/24"
+public_subnet2_cidr = "192.168.2.0/24"
+public_subnet3_cidr = "192.168.3.0/24"
+imagename           = "ami-0a6b2839d44d781b2"
