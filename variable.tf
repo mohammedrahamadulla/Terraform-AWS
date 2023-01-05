@@ -7,3 +7,5 @@ variable "azs" {}
 variable "imagename" {}
 variable "instance_type" {}
 variable "key_name" {}
+variable "region" {}
+variable "ami" {}

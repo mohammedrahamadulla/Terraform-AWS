@@ -1,7 +1,8 @@
 resource "aws_instance" "private-server" {
   #count                       = 3
-  count                       = var.env == "Dev" ? 3 : 1
-  ami                         = var.imagename
+  count = "${var.env}" == "Dev" ? 1 : 1
+  #ami                         = var.imagename
+  ami                         = lookup(var.ami, var.region)
   instance_type               = var.instance_type
   key_name                    = var.key_name
   subnet_id                   = element(aws_subnet.private_subnet.*.id, count.index)

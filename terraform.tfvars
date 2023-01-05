@@ -7,3 +7,8 @@ azs                        = ["us-east-1a", "us-east-1b", "us-east-1c"]
 imagename                  = "ami-0a6b2839d44d781b2"
 instance_type              = "t2.micro"
 key_name                   = "Laptop_key2"
+region                     = "us-east-1"
+ami = {
+  us-east-1 = "ami-08d4ac5b634553e16"
+  us-east-2 = "ami-0960abb70c8bb45f3"
+}

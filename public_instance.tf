@@ -1,8 +1,9 @@
 resource "aws_instance" "public-server" {
   #count          = length(var.public_subnet_cidr_blocks)    #want to create the instance on the each subnets.
   #count                       = 3
-  count                       = var.env == "Dev" ? 3 : 1
-  ami                         = var.imagename
+  count = var.env == "Dev" ? 1 : 1
+  #ami                         = var.imagename
+  ami                         = lookup(var.ami, var.region)
   instance_type               = var.instance_type
   key_name                    = var.key_name
   subnet_id                   = element(aws_subnet.public_subnet.*.id, count.index)
